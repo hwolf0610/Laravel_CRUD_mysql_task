@@ -16,3 +16,10 @@ Route::get('/', function () {
 });
 
 Route::resource('contacts', 'ContactController');
+
+Route::get('listpetani', function () {
+
+    $petani = DB::table('tbl_user')->get();
+
+    return view('listpetani', ['petani' => $petani]);
+});
